@@ -137,7 +137,7 @@
       <!-- Jede Frage ist ein "Step" -->
 	  
 	  <div class="q step">
-        <h2>1) Wenn du politisch mitentscheiden könntest, was wäre die am wichtigsten?</h2>
+        <h2>1) Wenn du politisch mitentscheiden könntest, was wäre dir am wichtigsten?</h2>
         <label><input type="radio" name="q9" value="B"> Mehr Einfluss für mich und meine Verbündeten.</label>
 		<label><input type="radio" name="q9" value="A"> Die Wahrung von Ordnung und Recht.</label>
 		<label><input type="radio" name="q9" value="F"> Förderung von Bildung und Reformen.</label>
@@ -328,17 +328,27 @@
   }
 
   function computeResult() {
-    const counts = {A:0,B:0,C:0,D:0,E:0,F:0};
-    const data = new FormData(form);
-    for (const [, val] of data.entries()) {
-      if (counts[val] !== undefined) counts[val] += 1;
-    }
-    let best = "A";
-    for (const k of Object.keys(counts)) {
-      if (counts[k] > counts[best]) best = k;
-    }
-    return { best, counts };
-  }
+	  const counts = {A:0,B:0,C:0,D:0,E:0,F:0};
+	  const data = new FormData(form);
+	
+	  for (const [, val] of data.entries()) {
+	    if (counts[val] !== undefined) {
+	      counts[val] += 1;
+	    }
+	  }
+	
+	  // Maximalen Score bestimmen
+	  const values = Object.values(counts);
+	  const maxCount = Math.max(...values);
+	
+	  // Alle Buchstaben mit diesem Maximal-Score sammeln
+	  const candidates = Object.keys(counts).filter(k => counts[k] === maxCount);
+	
+	  // Zufällig eine der passenden Königinnen auswählen
+	  const best = candidates[Math.floor(Math.random() * candidates.length)];
+	
+	  return { best, counts };
+	}
 
   function showResultPage() {
 	  const { best, counts } = computeResult();
@@ -409,3 +419,4 @@
 </script>
 </body>
 </html>
+
