@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;600&family=IM+Fell+English&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Welche Frau von Heinrich VIII. wärst du?</title>
+  <style>
+    body {
+	  font-family: 'Cormorant', serif;
+	  margin: 16px;
+	  line-height: 1.4;
+	  background: #f5f5f8;
+	  font-size: 1.2rem; /* schöner für diese Schrift */
+	}
+		.card {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 20px 18px 18px;
+      border: 1px solid #ddd;
+      border-radius: 14px;
+      background: #fff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+    }
+    h1 { font-size: 1.35rem; margin: 0 0 8px; }
+    h2 { font-size: 1.15rem; margin: 0 0 10px; }
+    .small { color: #666; font-size: 0.9rem; margin-bottom: 10px; }
+    .q {
+      margin: 16px 0 4px;
+      padding: 14px 12px;
+      border: 1px solid #eee;
+      border-radius: 12px;
+    }
+    label {
+      display: block;
+      padding: 7px 8px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    label:hover { background: #f6f6f6; }
+    .row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+      justify-content: space-between;
+      align-items: center;
+    }
+    button {
+      padding: 9px 14px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      background: #fff;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+    button:hover { background: #f3f3f3; }
+    button[disabled] { opacity: 0.5; cursor: default; }
+    .btn-link {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+    .btn-link:hover { background: #f3f3f3; }
+    #progress { font-size: 0.9rem; color: #555; margin-top: 6px; }
+	
+        .result-main {
+      font-size: 1.1rem;
+      margin-bottom: 6px;
+    }
+    .result-queen {
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin-bottom: 4px;
+      text-align: center;
+    }
+    .result-img {
+      display: block;
+      width: 100%;
+      max-width: 260px;
+      margin: 12px auto;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+	.question-img {
+	  display: block;
+	  width: 100%;
+	  max-width: 360px;
+	  margin: 10px auto 12px;
+	  border-radius: 10px;
+	  object-fit: cover;
+	}
+    .result-tagline {
+      margin-top: 6px;
+      font-size: 0.95rem;
+      text-align: center;
+    }
+	h1, .result-queen {
+	  font-family: 'IM Fell English', serif;
+	  letter-spacing: 0.5px;
+	}
+
+	h2 {
+	  font-family: 'IM Fell English', serif;
+	  font-size: 1.2rem;
+	}
+
+	label {
+	  font-family: 'Cormorant', serif;
+	}
+	.result-tagline {
+	  font-family: 'Cormorant', serif;
+	  font-style: italic;
+	}
+
+	.btn-link, button {
+	  font-family: 'Cormorant', serif;
+	}
+
+  </style>
+</head>
+<body>
+
+  <!-- QUIZ-SEITE -->
+  <div id="quizCard" class="card">
+    <h1>Welche Frau von Heinrich VIII. wärst du? </h1>
+    <div class="small">
+      Stell dir vor, du wärst die Königin von England im 16. Jahrhundert.
+    </div>
+    <div id="progress" class="small"></div>
+
+    <form id="quiz">
+      <!-- Jede Frage ist ein "Step" -->
+	  
+	  <div class="q step">
+        <h2>1) Wenn du politisch mitentscheiden könntest, was wäre die am wichtigsten?</h2>
+        <label><input type="radio" name="q9" value="B"> Mehr Einfluss für mich und meine Verbündeten.</label>
+		<label><input type="radio" name="q9" value="A"> Die Wahrung von Ordnung und Recht.</label>
+		<label><input type="radio" name="q9" value="F"> Förderung von Bildung und Reformen.</label>
+        <label><input type="radio" name="q9" value="D"> Sichere Versorgung meiner eigenen Haushalte.</label>
+        <label><input type="radio" name="q9" value="E"> Das Wohlbefinden des Volkes.</label>
+		<label><input type="radio" name="q9" value="C"> Frieden zwischen Hof, Adel und Volk.</label>
+      </div>
+	  
+	  <div class="q step">
+        <h2>2) Ein Gerücht über dich macht die Runde. Wie löst du die Situation?</h2>
+		<label><input type="radio" name="q3" value="E"> Ich suche Nähe zu Verbündeten.</label>
+        <label><input type="radio" name="q3" value="A"> Ich ignoriere es offiziell, um meine Würde zu wahren.</label>
+        <label><input type="radio" name="q3" value="C"> Ich kläre es indirekt über die richtigen Kanäle.</label>
+		<label><input type="radio" name="q3" value="B"> Ich konfrontiere den Urheber / die Urheberin.</label>
+		<label><input type="radio" name="q3" value="F"> Ich lege alle Fakten auf den Tisch und beende das Ganze.</label>
+        <label><input type="radio" name="q3" value="D"> Ich ziehe mich zurück und warte ab.</label>
+      </div>
+
+      <div class="q step">
+        <h2>3) Der König wechselt spontan seine Meinung und verlangt von dir etwas Unlogisches. Was tust du?</h2>
+		<label><input type="radio" name="q2" value="B"> Ich hinterfrage die Logik dahinter und versuche, ihn zu einem klügeren Entschluss zu lenken.</label>
+        <label><input type="radio" name="q2" value="A"> Ich erfülle die Forderung pflichtbewusst ohne Widerspruch.</label>
+        <label><input type="radio" name="q2" value="D"> Ich bleibe ruhig, bestätige seine Entscheidung höflich, und setze sie dann auf die vernünftigste Weise um.</label>
+        <label><input type="radio" name="q2" value="C"> Ich folge der Anweisung, um ihn nicht zu verärgern.</label>
+        <label><input type="radio" name="q2" value="E"> Ich stimme sofort zu, gebe mir Mühe, und hoffe, dass er schnell das Interesse verliert.</label>
+        <label><input type="radio" name="q2" value="F"> Ich akzeptiere seinen Wunsch, erkläre aber behutsam die Folgen und schlage eine praktikable Lösung vor.</label>
+      </div>
+
+      <div class="q step">
+		  <h2>4) Was ärgert dich am meisten?</h2>
+		  <label><input type="radio" name="q4" value="E"> Wenn Menschen unüberlegt handeln und du es ausbaden sollst.</label> 
+		  <label><input type="radio" name="q4" value="C"> Wenn du zwischen streitenden Menschen vermitteln musst.</label>
+		  <label><input type="radio" name="q4" value="D"> Wenn du ungefragt im Mittelpunkt stehst.</label>
+		  <label><input type="radio" name="q4" value="B"> Wenn andere etwas von dir erwarten, das sie selbst nicht erfüllen würden.</label>
+		  <label><input type="radio" name="q4" value="F"> Wenn jemand versucht, deine Entscheidungen zu kontrollieren.</label>
+		  <label><input type="radio" name="q4" value="A"> Wenn Regeln keinen Sinn ergeben.</label>
+		</div>
+
+
+      <div class="q step">
+        <h2>5) Du hast den Verdacht, dass dein Gemahl dir untreu ist. Wie reagierst du?</h2>
+        <label><input type="radio" name="q5" value="A"> Ich halte still, eine Ehe ist kein ort für Zweifel.</label>
+        <label><input type="radio" name="q5" value="C"> Ich bete und hoffe, dass es sich von selbst erledigt..</label>
+		<label><input type="radio" name="q5" value="B"> Ich stelle ihn zur Rede.</label>
+		<label><input type="radio" name="q5" value="E"> Ich suche selbst Zerstreuung.</label>
+        <label><input type="radio" name="q5" value="D"> Ich bereite die Scheidungspapiere vor.</label>
+        <label><input type="radio" name="q5" value="F"> Ich beobachte das Ganze, bevor ich reagiere.</label>
+      </div>
+	  
+	  <div class="q step">
+        <h2>6) Was ist dir in einer Ehe am wichtigsten?</h2>
+		<label><input type="radio" name="q8" value="F"> Gute Gespräche.</label>
+        <label><input type="radio" name="q8" value="B"> Aufmerksamkeit.</label>
+        <label><input type="radio" name="q8" value="C"> Harmonie.</label>
+		<label><input type="radio" name="q8" value="E"> Gemeinsamer Spaß.</label>
+        <label><input type="radio" name="q8" value="D"> Anständige Behandlung.</label>
+		<label><input type="radio" name="q8" value="A"> Treue.</label>
+      </div>
+
+      <div class="q step">
+        <h2>7) Würdest du dich für deinen Gemahl ändern, wenn er es verlangt?</h2>
+		<label><input type="radio" name="q6" value="C"> Ich versuche es, um den Frieden zu wahren.</label>
+        <label><input type="radio" name="q6" value="A"> Ja. Eine Ehe erfordert Opfer</label>
+		<label><input type="radio" name="q6" value="F"> Ich überlege genau, was ich aufgebe und was nicht.</label>
+        <label><input type="radio" name="q6" value="D"> Nein. Ich bleibe, wie ich bin.</label>
+		<label><input type="radio" name="q6" value="B"> Ja, wenn ich mir davon einen Vorteil verspreche.</label>
+        <label><input type="radio" name="q6" value="E"> Vielleicht, aber nicht dauerhaft.</label>
+      </div>
+
+      
+	  
+	  <div class="q step">
+        <h2>8) Welches Outfit würdest du wählen?</h2>
+		<img src="outfits.jpg" class="question-img">
+		<label><input type="radio" name="q7" value="F"> A</label>
+		<label><input type="radio" name="q7" value="D"> B</label>
+		<label><input type="radio" name="q7" value="C"> C</label>
+		<label><input type="radio" name="q7" value="E"> D</label>
+        <label><input type="radio" name="q7" value="A"> E</label>
+        <label><input type="radio" name="q7" value="B"> F</label>        
+      </div>
+
+      <div class="row">
+        <button type="button" id="backBtn">Zurück</button>
+        <button type="button" id="nextBtn">Weiter</button>
+        <button type="button" id="resetBtn">Neu starten</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- ERGEBNIS-SEITE -->
+  <div id="resultCard" class="card" style="display:none;">
+    <h1>Dein Ergebnis</h1>
+    <div id="resultContent" class="result">
+      <!-- wird per JS gefüllt -->
+    </div>
+    <div class="row" style="margin-top:16px;">
+      <button type="button" id="restartBtn">Quizz neu starten</button>
+    </div>
+  </div>
+
+<script>
+  // Ergebnis: Buchstabe -> Queen + Song
+  const RESULT = {
+  A: {
+    queen: "Katharina von Aragon",
+    song: "No Way",
+    yt: "daa_SdJHWfc",
+    img: "aragon.jpg",
+    tagline: "Die erste Frau: standfest, prinzipientreu – und bekommst dafür historisch leider nur ein trockenes „divorced“."
+  },
+  B: {
+    queen: "Anne Boleyn",
+    song: "Don’t Lose Ur Head",
+    yt: "kAthQG1aKho",
+    img: "boleyn.jpg",
+    tagline: "Clever, charismatisch, gefährlich spannend – so spannend, dass Heinrich sicherheitshalber zur Axt greift."
+  },
+  C: {
+    queen: "Jane Seymour",
+    song: "Heart of Stone",
+    yt: "wMY7nZHNp7U",
+    img: "seymour.jpg",
+    tagline: "Harmonie-Fan mit stabilem Inneren – historisch „died“, im Quiz aber nur emotional überarbeitet."
+  },
+  D: {
+    queen: "Anna von Kleve",
+    song: "Get Down",
+    yt: "m5xv7fyRFyI",
+    img: "cleves.jpg",
+    tagline: "Wenig Drama, maximale Abfindung. „Divorced“ – aber mit neuem Haus und Ruhe, vielen Dank auch."
+  },
+  E: {
+    queen: "Katherine Howard",
+    song: "All You Wanna Do",
+    yt: "8J9n2hFI2bs",
+    img: "howard.jpg",
+    tagline: "Viel Herz, schlechter Männergeschmack. „Beheaded“ in der Geschichte – hier nur ein freundlicher Reality-Check."
+  },
+  F: {
+    queen: "Catherine Parr",
+    song: "I Don’t Need Your Love",
+    yt: "ukoXwo_eB_o",
+    img: "parr.jpg",
+    tagline: "Die erwachsene Person im Raum, die als Einzige den Abspann erlebt. Offizieller Status: „survived“."
+  },
+};
+
+
+  const form = document.getElementById("quiz");
+  const steps = Array.from(document.querySelectorAll(".step"));
+  const progressEl = document.getElementById("progress");
+  const quizCard = document.getElementById("quizCard");
+  const resultCard = document.getElementById("resultCard");
+  const resultContent = document.getElementById("resultContent");
+
+  const backBtn = document.getElementById("backBtn");
+  const nextBtn = document.getElementById("nextBtn");
+  const resetBtn = document.getElementById("resetBtn");
+  const restartBtn = document.getElementById("restartBtn");
+
+  let currentStep = 0;
+
+  function updateProgress() {
+    progressEl.textContent = `Frage ${currentStep + 1} von ${steps.length}`;
+  }
+
+  function showStep(index) {
+    steps.forEach((step, i) => {
+      step.style.display = i === index ? "block" : "none";
+    });
+    backBtn.disabled = index === 0;
+    if (index === steps.length - 1) {
+      nextBtn.textContent = "Ergebnis anzeigen";
+    } else {
+      nextBtn.textContent = "Weiter";
+    }
+    updateProgress();
+  }
+
+  function currentQuestionAnswered() {
+    const step = steps[currentStep];
+    const inputs = step.querySelectorAll("input[type=radio]");
+    for (const inp of inputs) {
+      if (inp.checked) return true;
+    }
+    return false;
+  }
+
+  function computeResult() {
+    const counts = {A:0,B:0,C:0,D:0,E:0,F:0};
+    const data = new FormData(form);
+    for (const [, val] of data.entries()) {
+      if (counts[val] !== undefined) counts[val] += 1;
+    }
+    let best = "A";
+    for (const k of Object.keys(counts)) {
+      if (counts[k] > counts[best]) best = k;
+    }
+    return { best, counts };
+  }
+
+  function showResultPage() {
+	  const { best, counts } = computeResult();
+	  const r = RESULT[best];
+	  const youtubeUrl = `https://www.youtube.com/watch?v=${r.yt}`;
+
+	  resultContent.innerHTML = `
+		  <div class="result-main">Du wärst am ehesten:</div>
+
+		  <div class="result-queen">${r.queen}</div>
+
+		  <img class="result-img" src="${r.img}">
+
+		  <div class="result-tagline">${r.tagline}</div>
+
+		  <div class="small" style="margin-top:12px;">
+			Score: Katharina von Aragon=${counts.A}, Anne Boleyn=${counts.B}, Jane Seymour=${counts.C}, Anna von Kleve =${counts.D}, Katherine Howard=${counts.E}, Catherine Parr=${counts.F}
+		  </div>
+
+		  <p><a class="btn-link" href="${youtubeUrl}" target="_blank" rel="noopener">
+			Dein Song im Musical Six
+		  </a></p>
+	  `;
+
+	  quizCard.style.display = "none";
+	  resultCard.style.display = "block";
+	  window.scrollTo({ top: 0, behavior: "smooth" });
+	}
+
+
+
+  backBtn.addEventListener("click", () => {
+    if (currentStep > 0) {
+      currentStep -= 1;
+      showStep(currentStep);
+    }
+  });
+
+  nextBtn.addEventListener("click", () => {
+    if (!currentQuestionAnswered()) {
+      alert("Bitte eine Antwort auswählen, bevor du weitergehst.");
+      return;
+    }
+    if (currentStep < steps.length - 1) {
+      currentStep += 1;
+      showStep(currentStep);
+    } else {
+      showResultPage();
+    }
+  });
+
+  function resetQuiz() {
+    form.reset();
+    currentStep = 0;
+    showStep(currentStep);
+    quizCard.style.display = "block";
+    resultCard.style.display = "none";
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  resetBtn.addEventListener("click", resetQuiz);
+  restartBtn.addEventListener("click", resetQuiz);
+
+  form.addEventListener("submit", (e) => e.preventDefault());
+
+  // Initial
+  showStep(currentStep);
+</script>
+</body>
+</html>
